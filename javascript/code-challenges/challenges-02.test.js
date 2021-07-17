@@ -57,6 +57,11 @@ const forLoopTwoToThe = (arr) => {
   for (let number of arr) {
     let oldArray = Math.pow(2, number);
     newArray.push(oldArray);
+    // for in
+    // for (let number in arr) {
+    //   output.push(Math.pow(2,arr[i]));
+    // )
+    //}
   }
   return newArray;
 };
@@ -100,9 +105,8 @@ Read the MDN documentation on String.charCodeAt() if necessary.
 For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
-const charCode = (arr) => {
+const charCode = (arr) => arr.map(letter => letter.charCodeAt());
   // Solution code here...
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -128,7 +132,7 @@ Write a function named extractAbilities that, given the array of abilities, uses
 Note: Because this function is expecting the array of abilities, it will be invoked as:
 extractAbilities(snorlaxAbilities.abilities)
 ------------------------------------------------------------------------------------------------ */
-
+let theName = abilities[0].ability.name;
 const snorlaxAbilities = {
   abilities: [
     {
@@ -160,9 +164,8 @@ const snorlaxAbilities = {
   weight: 4600,
 };
 
-const extractAbilities = (arr) => {
-  // Solution code here...
-};
+const extractAbilities = (arr) => arr.map(item => item.ability.name);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
@@ -207,9 +210,12 @@ const snorlaxStats = {
   weight: 4600,
 };
 
-const extractStats = (arr) => {
-  // Solution code here...
-};
+const extractStats = (arr) => arr.map(item => {
+  return { name: item.stat.name,
+    total: item.effort + item.baseStat
+  };
+});
+
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -273,7 +279,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return an array containing the character code for each letter', () => {
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1'])).toStrictEqual([67, 111, 100, 101, 51, 48, 49]);
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1']).length).toStrictEqual(7);
@@ -309,7 +315,7 @@ xdescribe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return an array containing objects with name and total values', () => {
     expect(extractStats(snorlaxStats.stats)).toStrictEqual([
       { name: 'speed', total: 35, },
