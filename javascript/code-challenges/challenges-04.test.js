@@ -21,9 +21,19 @@ function lower(str) {
   return str.toLowerCase();
 }
 
-const updateAnimal = (arr, callback) => {
-  // Solution code here...
-};
+// for loop
+// const updateAnimal = (arr, callback) => {
+//   // Solution code here...
+//   let animals = [];
+//   for (let i in arr){
+//     animals.push(callback(arr[i]));
+//   }
+//   return animals;
+// };
+
+// map
+const updateAnimal = (arr, callback) => arr.map(str => callback(str));
+
 
 // Did not get a chance to come back to this one before end of class and I need to get retro done.
 /* ------------------------------------------------------------------------------------------------
@@ -58,7 +68,7 @@ Write a function named sortBackwards that takes in an array of numbers and retur
 HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 ------------------------------------------------------------------------------------------------ */
 
-const sortBackwards = (arr) => arr.sort((a, b) => {return b - a;});
+const sortBackwards = (arr) => arr.sort((a, b) => { return b - a; });
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -95,9 +105,20 @@ Write a function named alphabetizeBetter that takes in an array of strings and r
 For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, and so is ['alphabet', 'Alphabet', 'carrot', 'Zebra'].
 ------------------------------------------------------------------------------------------------ */
 
-const alphabetizeBetter = (arr) => {
-  // Solution code here...
-};
+// const alphabetizeBetter = (arr) => {
+//   arr.sort((a, b) => {
+//     if (a.toLowerCase() < b.toLowerCase()) {
+//       return -1;
+//     }
+//     if (a.toLowerCase() > b.toLowerCase()) {
+//       return 1;
+//     }
+//     if (a.toLowerCase() === b.toLowerCase()) {
+//       return 0;
+//     }
+//     return arr;
+//   });
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -267,7 +288,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should alphabetize without regard to capitalization', () => {
     expect(alphabetizeBetter(['Alice', 'apple', 'alert', 'Average'])).toStrictEqual(['alert', 'Alice', 'apple', 'Average']);
     const ans = alphabetizeBetter(['alphabet', 'Zebra', 'Alphabet', 'carrot']);
