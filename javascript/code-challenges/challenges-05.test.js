@@ -41,7 +41,8 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 ------------------------------------------------------------------------------------------------ */
 
-// const addPurchases = (arr) => arr.reduce((accumulator, )=>{}, []);
+// const addPurchases = (arr) => ( 
+//   return arr.reduce((acc, item)=> acc + item.purchasePrice, 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -53,6 +54,7 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
+  return arr.reduce(acc => acc + 1, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -112,12 +114,20 @@ let starWarsData = [{
   gender: 'female'
 }];
 
+// const returnNames = (arr) => {
+//   let starNames = arr.reduce((accumulator, actors) => {
+//     accumulator[actors.names];
+//     return accumulator;
+//   }, {});
+// };
+
 const returnNames = (arr) => {
-  let starNames = arr.reduce((accumulator, actors) => {
-    accumulator[actors.names];
-    return accumulator;
-  }, {});
+  return arr.reduce((acc, character) => {
+    acc.push(character.name);
+    return acc;
+  }, []);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -130,8 +140,9 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 const reversedString = (str) => {
   let strings = str.split('');
   let reversed = strings.reduce((newString, currentLetter) => {
-    return newString + currentLetter;
+    return currentLetter + newString;
   }, '');
+  return reversed;
 };
 
 // const reversedString = (str) => str.reduce((newString, currentLetter) => newString + currentLetter);
