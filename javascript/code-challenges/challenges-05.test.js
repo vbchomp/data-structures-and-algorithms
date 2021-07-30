@@ -60,6 +60,7 @@ const countNumberOfElements = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
+
 Write a function named returnNames that, given the Star Wars data, below, uses reduce to return an array containing the names of the characters.
 ------------------------------------------------------------------------------------------------ */
 
