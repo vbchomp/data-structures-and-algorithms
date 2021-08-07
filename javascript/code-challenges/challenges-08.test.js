@@ -154,18 +154,16 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   let aToJ = /^[A-J]/;
-  let cityArr = arr.map(city => city.match(aToJ));
+  let cityArr = [];
+  arr.forEach(city => {
+    if (aToJ.test(city)) {
+      cityArr.push(city);
+    }
+  });
   return cityArr;
 };
 
-// const citiesAtoJ = (arr) => {
-//   let newArr = [];
-//   arr.map((part) => {
-//     if (part.match(/^[A-J]\w*/g)){
-//       newArr.push(part);
-//     }
-//   });
-//   return newArr;
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
