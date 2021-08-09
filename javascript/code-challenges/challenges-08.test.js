@@ -55,7 +55,11 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-  // Solution code here...
+  charArray.sort(charArray.children.length);
+  if (charArray.children.length === charArray.children.length) {
+    charArray.sort(charArray.children.house);
+  }
+  return charArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
