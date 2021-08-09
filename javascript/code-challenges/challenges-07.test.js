@@ -25,9 +25,7 @@ let starWarsPeople = [
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
-  starWarsArr.sort( (a, b) => {
-    return a.height < b.height;
-  });
+  return starWarsArr.sort((a, b) => Number(b.height) - Number(a.height));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,8 +61,8 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  for (let i = 0; i < str.length; i++) {
-    let pencil = str.splice(0,1);
+  for (let i = 0; i < str.length + 1; i++) {
+    let pencil = str.slice(i);
     result.push(pencil);
   }
   return result;
@@ -79,8 +77,7 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  arr.split(' ');
-  return arr;
+  return arr.split('');
 };
 
 
@@ -127,7 +124,13 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach(ingredient => {
+    // slice off the number
+    let withoutNumber = ingredient.slice(ingredient.indexOf(' ') + 1);
+    // slice off the measurement
+    let withoutMeasurement = withoutNumber.slice(withoutNumber.indexOf(' ') + 1);
+    result.push(withoutMeasurement);
+  });
   return result;
 };
 
@@ -137,11 +140,15 @@ CHALLENGE 7 - Stretch Goal
 Write a function named splitFoods that uses split to produce the same output as Challenge 3.
 
 You may also use other string or array methods.
+
+const joinArray = (arr) => arr.join(' ');
 ------------------------------------------------------------------------------------------------ */
 
 const splitFoods = (recipe) => {
-  let result = [];
-  // Solution code here...
+  let result = recipe.forEach(ingredient => {
+    let splitJoin = ingredient.split('');
+    result.push(splitJoin);
+  });
   return result;
 };
 
@@ -292,7 +299,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return a list of foods', () => {
     expect(splitFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
   });
