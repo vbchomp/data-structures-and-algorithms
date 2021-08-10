@@ -161,7 +161,7 @@ Write a function named stepAction that takes in the recipe and extracts the acti
 
 Return a new array containing just the verbs. For example, ['Mix until evenly distributed'] returns ['Mix'].
 ------------------------------------------------------------------------------------------------ */
-
+st 
 const stepActions = (recipe) => {
   let result = [];
   // Solution code here...
