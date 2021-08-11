@@ -31,9 +31,13 @@ Write a function named checkValues that takes in an object and a value and retur
 
 
 ------------------------------------------------------------------------------------------------ */
-
+//Done in code review
 const checkValues = (obj, value) => {
-  
+  let results = false;
+
+  Object.values(obj).forEach(val => val ? results = true : '');
+
+  return results;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -62,6 +66,10 @@ HR has asked you to change the data to make it easier to print so that it looks 
 //     results.push(contact);
 //   });
 // };
+
+//Done in code review
+const updateNumbers = (obj) => Object.keys(obj).map(key => `${key}: ${obj[key]}`);
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -111,9 +119,12 @@ const characters = [
   },
 ];
 
+//Done in code review
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+  Object.values(arr).forEach(person => {
+    houses.push(person.house);
+  });
   return houses;
 };
 
@@ -129,9 +140,20 @@ hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
+// Done in code review
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
+  let children = 0;
 
+  arr.forEach(person => {
+    if(person.name === character) {
+      Object.keys(person).forEach((key, index) => {
+        if (key === 'children') {
+          children = Object.values(person)[index].length;
+        }
+      });
+    }
+  });
+  return children ? true : false;
 };
 
 /* ------------------------------------------------------------------------------------------------
