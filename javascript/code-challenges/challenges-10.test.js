@@ -8,7 +8,7 @@ Write a function named returnTen, takes in a string and uses split and splice to
 ------------------------------------------------------------------------------------------------ */
 
 function returnTen(str) {
-  return str.split('').splice(str.length-10);
+  return str.split('').splice(str.length - 10);
 
 }
 
@@ -83,10 +83,18 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
+// Done in code review
 const grandTotal = (stores) => {
-  // let sum = 0;
+  const hourlySales = [];
+  for (let i in stores[0]) {
+    let hourlyTotal = 0;
+    for (let j in stores) {
+      hourlyTotal += stores[j][i];
+    }
+    hourlySales.push(hourlyTotal);
+  }
 
-
+  return hourlySales;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -99,9 +107,20 @@ Here is sample data for the 9:00 sales: { sales: '88 cookies', time: '9 a.m.' }.
 Write a function named salesData that uses forEach to iterate over the hourlySales array and create an object for each hour. Return an array of the formatted data.
 ------------------------------------------------------------------------------------------------ */
 
+// Done in code review
 const salesData = (hours, data) => {
-  // Solution code here...
+  const saleOverview = [];
+  data.forEach((cookieSale, index) => {
+    saleOverview.push({
+      sales: `${cookieSale} cookies`,
+      time: hours[index],
+    });
+  });
+
+  return saleOverview;
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
