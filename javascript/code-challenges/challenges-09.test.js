@@ -35,8 +35,8 @@ Write a function named checkValues that takes in an object and a value and retur
 const checkValues = (obj, value) => {
   let results = false;
 
-  Object.values(obj).forEach(val => val ? results = true : '');
-
+  // Object.values(obj).forEach(val => val ? results = true : '');
+  Object.values(obj).forEach(val => val === value ? results = true : '');
   return results;
 };
 
