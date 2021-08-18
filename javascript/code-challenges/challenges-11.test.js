@@ -79,9 +79,13 @@ This function should then raise 2 to the power of the resulting numbers, returni
 
 For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
-
+// Done in code review
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  let result = input.map((row) => {
+    return row.filter((cell) => typeof cell === 'number' && cell % 5 === 0)
+      .map((filteredCell) => Math.pow(2, filteredCell));
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -146,26 +150,34 @@ let starWarsData = [{
   gender: 'female'
 }];
 
+// Mine before code review
+// let findMaleAndFemale = (data) => {
+//   data.map((characters) => {
+//     if (characters.gender === 'female') {
+//       return `Females: ${characters.name}`;
+//     } else if (characters.gender === 'male') {
+//       return `Males: ${characters.name} and ${characters.name}`;
+//     }
+//   });
+// };
+
+// Fixed after code review
 let findMaleAndFemale = (data) => {
-  data.map((characters) => {
-    if (characters.gender === 'female') {
-      return `Females: ${characters.name}`;
-    } else if (characters.gender === 'male') {
-      return `Males: ${characters.name} and ${characters.name}`;
-    }
-  });
+  return data.filter(char => char.gender === 'male' || char.gender === 'female')
+    .map(char => char.name).join(' and ');
 };
 
 
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 6 
+CHALLENGE 6
 
 Write a function named findShortest that, given the Star Wars data from Challenge 6, uses any combination of filter, map and reduce to return the name of the character who is the shortest in height.
 ------------------------------------------------------------------------------------------------ */
-
+// Done in code review
 let findShortest = (data) => {
-  // Solution code here...
+  return data.reduce((acc, currentArr) => Number(acc.height) < Number(currentArr.height) ? acc : currentArr).name;
+
 };
 
 
