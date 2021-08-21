@@ -104,6 +104,7 @@ const validatePhoneNumber = (phoneNumber) => {
   return regex.test(phoneNumber);
 };
 
+// adding this comment because I forgot to change my branch
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
