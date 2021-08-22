@@ -54,19 +54,20 @@ let characters = [
   }
 ];
 
+// fixed on code review
 const sortByChildren = (charArray) => {
-  let lowestKidHouseName = '';
-  charArray.sort(a, b) {
-    if (a.children.length < b.children.length) {
-      let lowestKidHouseName = a.house;
-    } else if (b.children.length < a.children.length) {
-      let lowestKidHouseName = b.house;
-    } else if (a.house === b.house) {
-      charArray.sort(a.house);
+  return charArray.sort((a, b) => {
+    if (a.children.length > b.children.length) {
+      return 1;
+    } else if (a.children.length < b.children.length) {
+      return -1;
+    } else {
+      // a is considered les than a c or d so it will be 'smaller'
+      return a.house > b.house ? 1 : -1;
     }
-  }
-  return lowestKidHouseName;
+  });
 };
+
 
 
 /* ------------------------------------------------------------------------------------------------
