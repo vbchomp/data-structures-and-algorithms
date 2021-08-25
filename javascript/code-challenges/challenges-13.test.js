@@ -19,6 +19,17 @@ Write a function named longestString that takes in an array of strings and retur
 //   )
 // };
 
+//Fixed in code review
+const longestString = (arr) => {
+  // need length and index position
+  let currentLongest = { longestIdx: -1, longestStringlength: 0 };
+  arr.forEach((str, idx) => {
+    (str.length > currentLongest.longestStringlength) ? currentLongest = { longestIdx: idx, longestStringlength: str.length } : '';
+  });
+  return currentLongest.longestIdx;
+
+};
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -44,8 +55,10 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 //   return arr.map(colon => colon.find(':'));
 // };
 
+// Could not get this one working. 
 const findHappiness = (arr) => {
-  return arr.every(str => str.find(':'));
+  let regex = ':)';
+  return arr.filter(str => str === regex);
 };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -55,9 +68,7 @@ Write a function named standardizePhoneNumbers that takes in an array of phone n
 For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 // Worked with Charlie and Phil
-const standardizePhoneNumbers = (arr) => {
-  return arr.map(str => `${str.substring(1,4)}${str.substring(6, 9)}${str.substring(10, 14)}`);
-};
+const standardizePhoneNumbers = (arr) => (arr.map(str => `${str.substring(1, 4)}${str.substring(6, 9)}${str.substring(10, 14)}`));
 //   let area = arr.substring(1,3);
 //   let prefix = arr.substring(6,9);
 //   let code = arr.substring(11,14);
@@ -72,9 +83,11 @@ Write a function named onlyOddChars that takes in a string and returns only the 
 
 For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
-
+// Done in code review
 const onlyOddChars = (str) => {
-  // Solution code here...
+  return str.split('')
+    .filter((elem, idx) => idx % 2 === 1)
+    .join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -178,7 +191,7 @@ describe('Testing challenge 1', () => {
   test('It should return an index position of the longest string', () => {
     const strArray1 = ['Ginger', 'Goose', 'Tangerine', 'Rosie', 'Mario', 'Malaki']
     const strArray2 = [];
-    const strArray3= ['Ginger']
+    const strArray3 = ['Ginger']
 
     expect(longestString(strArray1)).toStrictEqual(2);
     expect(longestString(strArray2)).toStrictEqual(-1);
