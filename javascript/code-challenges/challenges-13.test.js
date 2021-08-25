@@ -56,9 +56,9 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 // };
 
 // Could not get this one working. 
+//Help from Fizzo.
 const findHappiness = (arr) => {
-  let regex = ':)';
-  return arr.filter(str => str === regex);
+  return arr.filter(str => str.includes(':)'));
 };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
