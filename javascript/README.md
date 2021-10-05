@@ -8,7 +8,9 @@ Each type of code challenge has slightly different instructions. Please refer to
 
 ## Table of Contents
 
-![Whiteboard](./array-reverse/array-reverse.png)
+[array-reverse](./array-reverse/array-reverse.png)
+
+[array-insert-shift](./array-insert-shift/array-insert-shift.png)
 
 ### Data Structure: New Implementation
 
