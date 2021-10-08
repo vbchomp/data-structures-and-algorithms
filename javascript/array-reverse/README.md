@@ -1,4 +1,4 @@
-# Insert to Middle of an Array
+# Reverse an Array
 Given an array and return a reversed array.
 
 ## Whiteboard Process
