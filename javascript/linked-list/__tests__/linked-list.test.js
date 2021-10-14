@@ -20,15 +20,15 @@ describe('Linked List', () => {
   });
     
   
-  it(' to the head', () => {
-    let list.append('anyString');
-    expect(list.head.value).toEqual('anyString');
-  });
+  // it(' to the head', () => {
+  //   let list.append('anyString');
+  //   expect(list.head.value).toEqual('anyString');
+  // });
     
-  it('', () => {
-    let list.append(1);
-    expect(list.head.next.value).toEqual(1);
-  });
+  // it('', () => {
+  //   let list.append(1);
+  //   expect(list.head.next.value).toEqual(1);
+  // });
   
 
 });
