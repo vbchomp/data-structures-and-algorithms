@@ -5,6 +5,7 @@
 ## Table of Contents
 
 - [Linked Lists](./linked-list/README.md)
+- [Linked List Insertion](./linked-list-insertion/README.md)
 
 ### Folder and Challenge Setup
 
