@@ -31,3 +31,7 @@ While the current node contains the next pointer, current node becomes the next 
 The insertAtIndex method takes in two parameters the node value and the index. If the node value is out of range or the index is 0, create a new node. Start the counter and save the head. Save the previous node before the index, increment the count, then save the node after the index. Then save the next node as the current node. Then increment the size of the list.
 
 I figured this could count for both the before and after, unless you did large numbers. 
+
+## Link
+
+[Link](https://github.com/vbchomp/data-structures-and-algorithms/tree/main/javascript/linked-list-insertion)
