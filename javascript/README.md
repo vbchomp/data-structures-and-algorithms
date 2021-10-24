@@ -6,6 +6,7 @@
 
 - [Linked Lists](./linked-list/README.md)
 - [Linked List Insertion](./linked-list-insertion/README.md)
+- [Linked List Kth](./linked-list-kth/README.md)
 
 ### Folder and Challenge Setup
 

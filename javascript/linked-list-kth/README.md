@@ -1,4 +1,4 @@
-# Linked List Insertions
+# Linked List Kth
 
 ## Challenge Summary
 
@@ -6,7 +6,7 @@ Create a Node class with properties for the value stored in the Node and pointer
 
 ## Whiteboard Process
 
-<!-- ![linked-list-whiteboard](./linked-list-kth.png) -->
+<!-- ![linked-list-kth-whiteboard](./linked-list-kth.png) -->
 Did not do whiteboard.
 
 ## Approach & Efficiency
