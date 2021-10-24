@@ -12,7 +12,7 @@ Create a Node class with properties for the value stored in the Node and pointer
 
 Watched a youtube video that explained how to insert at an index. I figured this would work for the before and after.  
 
-Used the Binary Search Algorithm to find the middle index each time. If the middle is not the number, the algorithm moves to the right or left and uses the new start and end values to find the new middle value. It iterates through this until it find the value. If the value is not in array it returns -1.
+[Linked Lists Data Structure | JavaScript](https://www.youtube.com/watch?v=ZBdE8DElQQU)
 
 ## Solution
 
