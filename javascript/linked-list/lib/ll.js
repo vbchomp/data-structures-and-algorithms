@@ -22,8 +22,7 @@ class LinkedList {
     while(currentNode.next) {
       currentNode = currentNode.next;
     }
-
-    currentNode.next = node;
+    
     return this;
 
   }
@@ -31,5 +30,7 @@ class LinkedList {
   // linked list includes method adds a node to the head list
   
 }
+
+
 
 module.exports = LinkedList;
