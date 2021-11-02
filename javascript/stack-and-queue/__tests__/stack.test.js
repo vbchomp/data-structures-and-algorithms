@@ -4,7 +4,7 @@ const Stack = require('../util/stack.js');
 
 xdescribe('stack tests', () => {
 
-  it('Successfully push onto a stack', () => {
+  xit('Successfully push onto a stack', () => {
 
   });
 
