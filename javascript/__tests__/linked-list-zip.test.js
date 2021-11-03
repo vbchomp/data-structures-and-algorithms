@@ -2,7 +2,7 @@
 
 const LinkedList = require('../linked-list-zip/ll.js');
 
-describe('insertAtHead function', () => {
+xdescribe('insertAtHead function', () => {
 
   test('it adds the element to the beginning of the list', () => {
     const ll = new LinkedList();
