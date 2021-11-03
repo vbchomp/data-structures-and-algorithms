@@ -1,6 +1,6 @@
 'use strict';
 
-const Stack = require('../util/stack.js');
+const Stack = require('../stack-and-queue/util/stack.js');
 
 xdescribe('stack tests', () => {
 

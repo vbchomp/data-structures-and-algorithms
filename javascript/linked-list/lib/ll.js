@@ -22,13 +22,12 @@ class LinkedList {
     while(currentNode.next) {
       currentNode = currentNode.next;
     }
-    
+
     return this;
 
   }
 
   // linked list includes method adds a node to the head list
-  
 }
 
 

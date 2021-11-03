@@ -1,6 +1,6 @@
 'use strict';
 
-const Queue = require('../util/queue.js');
+const Queue = require('../stack-and-queue/util/queue.js');
 
 describe('queue tests', () => {
 

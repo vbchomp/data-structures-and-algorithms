@@ -2,7 +2,7 @@
 
 //const Node = require('../lib/node.js');
 // Require our linked list implementation
-const LinkedList = require("../lib/ll.js");
+const LinkedList = require("../linked-list/lib/ll.js");
 console.log("Linked;", LinkedList);
 
 // describe('Linked List', () => {
