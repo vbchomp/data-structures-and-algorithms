@@ -17,6 +17,7 @@ describe("Linked List", () => {
     expect(list.head).toBeNull();
   });
 
+
   it('insert at the head', () => {
     let list = new LinkedList();
     list.insertAtHead('anyString');
@@ -50,4 +51,15 @@ describe("Linked List", () => {
     expect(list.toString()).toEqual('{ 1 } -> { 3 } -> { 3 } -> NULL');
 
   });
+
+  // it(' to the head', () => {
+  //   let list.append('anyString');
+  //   expect(list.head.value).toEqual('anyString');
+  // });
+
+  // it('', () => {
+  //   let list.append(1);
+  //   expect(list.head.next.value).toEqual(1);
+  // });
+
 });

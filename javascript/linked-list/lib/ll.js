@@ -27,15 +27,20 @@ class LinkedList {
 
     // If there are nodes
     let currentNode = this.head;
-    while(currentNode.next) {
+    while(currentNode) {
       currentNode = currentNode.next;
     }
+
     currentNode.next = node;
+
+
+
     return this;
 
   }
 
   // linked list includes method adds a node to the head list
+
   includes(value) {
     let currentNode = this.head;
     // instead of using currentNode.next to force while loop to stay in loop for the last node, use the current Node, so it will use the last node in the loop and catch with the boolean.
@@ -48,6 +53,9 @@ class LinkedList {
     }
     return false;
   }
+
+}
+
 
   toString() {
     let currentNode = this.head;
