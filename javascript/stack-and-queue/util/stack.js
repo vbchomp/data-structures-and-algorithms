@@ -36,7 +36,7 @@ class Stack {
   peek() {
     let current = this.top;
     if (!current) {
-      return 'Stack is empty!';
+      throw new Error('Stack is empty!!');
     } else {
       return current.value;
     }
