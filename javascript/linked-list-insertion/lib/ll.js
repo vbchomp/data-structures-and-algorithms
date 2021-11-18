@@ -101,9 +101,10 @@ class LinkedList {
 
 const ll = new LinkedList();
 
-ll.insertAtIndex(100);
-ll.insertAtIndex(200);
-ll.insertAtIndex(300);
+ll.append(100);
+ll.append(200);
+// console.log('linkedlist.head:', ll.head);
+
 
 module.exports = LinkedList;
 
