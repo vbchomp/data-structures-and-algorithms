@@ -4,9 +4,20 @@
 
 ## Table of Contents
 
+- [__tests__](./__tests__)
+- [array-binary-search](./array-binary-search/README.md)
+- [array-insert-shift](./array-insert-shift/README.md)
+- [array-reverse](./array-reverse/README.md)
 - [Linked Lists](./linked-list/README.md)
 - [Linked List Insertion](./linked-list-insertion/README.md)
 - [Linked List Kth](./linked-list-kth/README.md)
+- [linked-list-zip](./linked-list-zip/README.md)
+- [stack-and-queue](./stack-and-queue/README.md)
+- [stack-queue-animal-shelter](./stack-queue-animal-shelter/README.md)
+- [stack-queue-brackets](./stack-queue-brackets/README.md)
+- [stack-queue-pseudo](./stack-queueu-pseudo/README.md)
+- [tree-max](./tree-max/README.md)
+- [trees](./trees/README.md)
 
 ### Folder and Challenge Setup
 
