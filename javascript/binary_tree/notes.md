@@ -94,3 +94,38 @@ Copy the link to your open pull request and paste it into the corresponding Canv
 Leave a description of how long this assignment took you in the comments box
 Add any additional comments you like about your process or any difficulties you may have had with the assignment
 Merge your branch into main, and delete your branch (don’t worry, the PR link will still work)
+
+## Tree-breadth-first search
+
+- bfs() {
+  // if no root node, return
+  if (!this.root) return;
+  //create input and output queues/arrays
+  let queue = [this.root];
+  let output = [];
+  // while length = true
+  while (queue.length) {
+    // let's examine the first node
+    let node = queue.shift();
+    console.log('node', node);
+    // if there's a left child, push that to queue for later consumption
+    if (node.left) {
+      queue.push(node.left);
+    }
+    // if there is right child , push to that to queue for later consumption
+    if (node.right) {
+      queue.push(node.right);
+    }
+    //else/otherwise push value to output
+    output.push(node.value);
+  }
+  return output;
+}
+
+
+## Fizz-buzz
+
+- K-ary tree has same number of children on each branch.
+  Can be a binary tree, but not all binary trees are k-ary trees because they have uneven amounts of children.
+
+- 
