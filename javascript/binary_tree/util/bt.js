@@ -1,7 +1,6 @@
-'use strict';
+"use strict";
 
 class BinaryTree {
-
   constructor(root = null) {
     this.root = root;
   }
@@ -10,7 +9,6 @@ class BinaryTree {
   // Time - O(n) where n is the number of nodes
   // Space - O(h) where h is the height of the tree
   preOrder() {
-
     let results = [];
     // use _walk() 'underscore' to let other developers
     // know that this function is recursive
@@ -64,8 +62,27 @@ class BinaryTree {
     return results;
   }
 
+  fizzBuzzTree(nAry) {
+    if (!this.root) return;
+    let Fizz, Buzz, FizzBuzz;
+    let kAry = [];
+    for (let i = 1; i <= nAry.length; i++) {
+      if (i % 3 === 0 && i % 5 === 0) {
+        return FizzBuzz;
+      } else if (i % 3 === 0) {
+        return Fizz;
+      } else if (i % 5 === 0) {
+        return Buzz;
+      } else if (!i % 3 ===0 || !i % 5 ===0) {
+        // how do I turn it into a string?
+        // return 'i';
+      }
 
+      }
 
+    }
+    
+  }
 }
 
 module.exports = BinaryTree;
