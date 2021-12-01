@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const Node = require("./node.js");
 
@@ -62,36 +62,82 @@ class LinkedList {
     nodeString = `${nodeString} -> NULL`;
     return nodeString;
   }
+
+  zipList(secondList) {
+    let firstCurr, firstPrev = this.head;
+    let secondCurr, secondPrev = secondList.head;
+    // check is head exists
+    if (this.head.next) {
+      firstCurr = this.head.next;
+    }
+    if (secondList.head.next) {
+      secondCurr = secondList.head.next;
+    }
+
+    //assigning down to second list then up and left to first list
+    while (firstPrev && secondPrev) {
+      console.log('prevs', firstPrev, secondPrev);
+      firstPrev.next = secondPrev;
+      secondPrev.next = firstCurr;
+      firstPrev = firstCurr;
+      secondPrev = secondCurr;
+
+      // if the lists are same length
+      if (firstCurr) {
+        firstCurr = firstCurr.next;
+      }
+      if (secondCurr) {
+        secondCurr = secondCurr.next;
+      }
+    }
+
+    return this.head;
+  }
+
+
+
 }
 
 const ll = new LinkedList();
+    ll.append(1);
+    ll.append(2);
+    ll.append(3);
+    const ll2 = new LinkedList();
+    ll2.append('a');
+    ll2.append('b');
+    ll2.append('c');
 
-ll.append(100);
-ll.append(200);
-ll.append(300);
-ll.append(400);
-ll.append(500);
-ll.append(600);
+    let results = ll.zipList(ll2);
+console.log('results', results);
+
+// const ll = new LinkedList();
+
+// ll.append(100);
+// ll.append(200);
+// ll.append(300);
+// ll.append(400);
+// ll.append(500);
+// ll.append(600);
 // console.log('linkedlist.head:', ll.head);
 
-const reverse = (linkedlist) => {
-  let prev = linkedlist.head;
-  let current = linkedlist.head.next;
-  let forward = linkedlist.head.next.next;
+// const reverse = (linkedlist) => {
+//   let prev = linkedlist.head;
+//   let current = linkedlist.head.next;
+//   let forward = linkedlist.head.next.next;
 
-  current.next = prev;
+//   current.next = prev;
 
-  while (forward) {
-    prev = current;
-    current = forward;
-    forward = forward.next;
-    current.next = prev;
-  }
-  linkedlist.head = current;
-  console.log('current',current);
-  console.log('this.head', linkedlist.head);
-  return linkedlist;
-};
-console.log('reverse', reverse(ll).head);
+//   while (forward) {
+//     prev = current;
+//     current = forward;
+//     forward = forward.next;
+//     current.next = prev;
+//   }
+//   linkedlist.head = current;
+//   console.log('current',current);
+//   console.log('this.head', linkedlist.head);
+//   return linkedlist;
+// };
+// console.log('reverse', reverse(ll).head);
 
 module.exports = LinkedList;
