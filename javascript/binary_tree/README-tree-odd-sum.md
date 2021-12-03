@@ -8,7 +8,7 @@ Find the sum of the odd numbers in the binary tree.
 
 Started with the tests listed in the challenge. Watched a Youtube video to figure out how to start TDD. [Linked Lists Data Structure | JavaScript](https://www.youtube.com/watch?v=ZBdE8DElQQU)
 
-Just created this to get turned in for for tonight.
+Just created this to get turned in for for tonight. Working on queues now.
 
 ## Link
 
