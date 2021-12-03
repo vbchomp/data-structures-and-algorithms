@@ -129,3 +129,117 @@ Merge your branch into main, and delete your branch (don’t worry, the PR link 
   Can be a binary tree, but not all binary trees are k-ary trees because they have uneven amounts of children.
 
 - 
+
+
+
+## Odd Sum
+
+// Binary Tree node
+    class Node
+    {
+        constructor(data) {
+           this.left = null;
+           this.right = null;
+           this.data = data;
+        }
+    }
+ 
+    // Utility function to create a
+    // new Binary Tree node
+    function newNode(data)
+    {
+          let node = new Node(data);
+        return node;
+    }
+ 
+    // Function to check if there is a path from root
+    // to the given node. It also populates
+    // 'arr' with the given path
+    function getPath(root, arr, x)
+    {
+        // if root is null
+        // there is no path
+        if (root==null)
+            return false;
+ 
+        // push the node's value in 'arr'
+        arr.push(root.data);
+ 
+        // if it is the required node
+        // return true
+        if (root.data == x)
+            return true;
+ 
+        // else check whether the required node lies
+        // in the left subtree or right subtree of
+        // the current node
+        if (getPath(root.left, arr, x) || getPath(root.right, arr, x))
+            return true;
+ 
+        // required node does not lie either in the
+        // left or right subtree of the current node
+        // Thus, remove current node's value from
+        // 'arr'and then return false
+        arr.pop();
+        return false;
+    }
+ 
+    // Function to get the sum of odd nodes in the
+    // path between any two nodes in a binary tree
+    function sumOddNodes(root, n1, n2)
+    {
+        // vector to store the path of
+        // first node n1 from root
+        let path1= [];
+ 
+        // vector to store the path of
+        // second node n2 from root
+        let path2= [];
+ 
+        getPath(root, path1, n1);
+        getPath(root, path2, n2);
+ 
+        let intersection = -1;
+ 
+        // Get intersection point
+        let i = 0, j = 0;
+        while (i != path1.length || j != path2.length) {
+ 
+            // Keep moving forward until no intersection
+            // is found
+            if (i == j && path1[i] == path2[j]) {
+                i++;
+                j++;
+            }
+            else {
+                intersection = j - 1;
+                break;
+            }
+        }
+ 
+        let sum = 0;
+ 
+        // calculate sum of ODD nodes from the path
+        for (i = path1.length - 1; i > intersection; i--)
+            if(path1[i]%2!=0)
+                sum += path1[i];
+ 
+        for (i = intersection; i < path2.length; i++)
+            if(path2[i]%2!=0)
+                sum += path2[i];
+ 
+        return sum;        
+    }
+     
+    let root = newNode(1);
+       
+    root.left = newNode(2);
+    root.right = newNode(3);
+    root.left.left = newNode(4);
+    root.left.right = newNode(5);
+    root.right.right = newNode(6);
+       
+    let node1 = 5;
+    let node2 = 6;
+       
+    document.write(sumOddNodes(root, node1, node2));

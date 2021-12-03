@@ -120,14 +120,14 @@ console.log('results', results);
 // ll.append(600);
 // console.log('linkedlist.head:', ll.head);
 
-// const reverse = (linkedlist) => {
+// const reverseList = (linkedlist) => {
 //   let prev = linkedlist.head;
 //   let current = linkedlist.head.next;
 //   let forward = linkedlist.head.next.next;
 
 //   current.next = prev;
 
-//   while (forward) {
+//   while (current != null) {
 //     prev = current;
 //     current = forward;
 //     forward = forward.next;

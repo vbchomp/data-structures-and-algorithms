@@ -50,6 +50,7 @@ describe('zip function', () => {
     expect(results.next.next.next.next.next.next.next.value).toEqual(5);
   });
 
+  // doesn't work.
   test('it zips the two lists when 2nd list is longer', () => {
     console.log('here');
     const ll = new LinkedList();
