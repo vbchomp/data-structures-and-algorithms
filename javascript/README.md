@@ -13,11 +13,14 @@
 - [Linked List Kth](./linked-list/README-list-kth.md)
 - [linked-list-zip](./linked-list/README-list-zip.md)
 - [stack-and-queue](./stack-and-queue/README.md)
-- [stack-queue-animal-shelter](./stack-queue-animal-shelter/README.md)
-- [stack-queue-brackets](./stack-queue-brackets/README.md)
-- [stack-queue-pseudo](./stack-queueu-pseudo/README.md)
-- [tree-max](./tree-max/README.md)
-- [trees](./trees/README.md)
+- [stack-queue-animal-shelter](./stack-queue/README-SQAS.md)
+- [stack-queue-brackets](./stack-queue/README-SQB.md)
+- [stack-queue-pseudo](./stack-queueu/README-SQP.md)
+- [binary trees](./binary_tree/README.md)
+- [binary trees breadth first](./binary_tree/README-tree-breadth-first.md)
+- [binary trees tree-max](./binary_tree/README-tree-max.md)
+- [binary trees fizz buzz](./binary_tree/README-tree-fizz-buzz.md)
+- [binary trees odd sum](./binary_tree/README-tree-odd-sum.md)
 
 ### Folder and Challenge Setup
 
