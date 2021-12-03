@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-const Node = require("./node.js");
+const Node = require('./node.js');
 
 class LinkedList {
   constructor() {
@@ -47,7 +47,7 @@ class LinkedList {
     // Set current to first node
     current = this.head;
     let count = 0;
-    console.log("here", index);
+    console.log('here', index);
 
     if (index === 0 && this.head) {
       this.head = node;
@@ -55,14 +55,14 @@ class LinkedList {
       this.size++;
       return;
     }
-    console.log("here");
+    console.log('here');
 
     while (count < index) {
       previous = current; // node before index
       count++; // incrementing count
       current = current.next; // node after index
     }
-    console.log("current:", current);
+    console.log('current:', current);
 
     node.next = current; // saving the next node as current
     previous.next = node;
@@ -105,23 +105,6 @@ class LinkedList {
     this.head.next = tempHead;
   }
 
-  // linked lists append to the end of the list by adding a new node at end
-  // append(value) {
-  //   let node = new Node(value);
-  //   // what if the list has no nodes?
-  //   if (!this.head) {
-  //     this.head = node;
-  //     return this;
-  //   }
-  //   // If there are nodes
-  //   let currentNode = this.head;
-  //   while (currentNode) {
-  //     currentNode = currentNode.next;
-  //   }
-  //   currentNode.next = node;
-  //   return this;
-  // }
-
   // linked list includes method adds a node to the head list
   includes(value) {
     let currentNode = this.head;
@@ -137,16 +120,16 @@ class LinkedList {
 
   toString() {
     let currentNode = this.head;
-    let nodeString = "";
+    let nodeString = '';
     while (currentNode.next) {
-      console.log("currentNode.value:", currentNode.value);
-      nodeString === ""
+      console.log('currentNode.value:', currentNode.value);
+      nodeString === ''
         ? (nodeString = `{ ${currentNode.value} }`)
         : (nodeString = `${nodeString} -> { ${currentNode.value} }`);
       currentNode = currentNode.next;
     }
     // because the while did not act on the last node it did not utilize the terniary.
-    nodeString === ""
+    nodeString === ''
       ? (nodeString = `{ ${currentNode.value} }`)
       : (nodeString = `${nodeString} -> { ${currentNode.value} }`);
     nodeString = `${nodeString} -> NULL`;
@@ -165,35 +148,98 @@ class LinkedList {
     }
     return current;
   }
+
+  zipList(secondList) {
+    let firstCurr, firstPrev = this.head;
+    let secondCurr, secondPrev = secondList.head;
+    // check is head exists
+    if (this.head.next) {
+      firstCurr = this.head.next;
+    }
+    if (secondList.head.next) {
+      secondCurr = secondList.head.next;
+    }
+
+    //assigning down to second list then up and left to first list
+    while (firstPrev && secondPrev) {
+      console.log('prevs', firstPrev, secondPrev);
+      firstPrev.next = secondPrev;
+      secondPrev.next = firstCurr;
+      firstPrev = firstCurr;
+      secondPrev = secondCurr;
+
+      // if the lists are same length
+      if (firstCurr) {
+        firstCurr = firstCurr.next;
+      }
+      if (secondCurr) {
+        secondCurr = secondCurr.next;
+      }
+    }
+
+    return this.head;
+  }
+
 }
 
 const ll = new LinkedList();
 
-ll.append(100);
-ll.append(200);
-ll.append(300);
-ll.append(400);
-ll.append(500);
-ll.append(600);
+ll.append(1);
+ll.append(2);
+ll.append(3);
+const ll2 = new LinkedList();
+ll2.append('a');
+ll2.append('b');
+ll2.append('c');
+
+let results = ll.zipList(ll2);
+console.log('results', results);
+
+// ll.append(100);
+// ll.append(200);
+// ll.append(300);
+// ll.append(400);
+// ll.append(500);
+// ll.append(600);
 // console.log('linkedlist.head:', ll.head);
 
-const reverse = (linkedlist) => {
-  let prev = this.head;
-  let current = this.head.next;
-  let forward = this.head.next.next;
+// const reverse = (linkedlist) => {
+//   let prev = this.head;
+//   let current = this.head.next;
+//   let forward = this.head.next.next;
 
-  current.next = prev;
+//   current.next = prev;
 
-  while (forward) {
-    prev = current;
-    current = forward;
-    forward = forward.next;
-    current.next = prev;
-  }
+//   while (forward) {
+//     prev = current;
+//     current = forward;
+//     forward = forward.next;
+//     current.next = prev;
+//   }
 
-  return linkedlist;
-};
-console.log('reverse', reverse(ll));
+//   return linkedlist;
+// };
+// console.log('reverse', reverse(ll));
+
+// const reverseList = (linkedlist) => {
+//   let prev = linkedlist.head;
+//   let current = linkedlist.head.next;
+//   let forward = linkedlist.head.next.next;
+
+//   current.next = prev;
+
+//   while (current != null) {
+//     prev = current;
+//     current = forward;
+//     forward = forward.next;
+//     current.next = prev;
+//   }
+//   linkedlist.head = current;
+//   console.log('current',current);
+//   console.log('this.head', linkedlist.head);
+//   return linkedlist;
+// };
+// console.log('reverse', reverse(ll).head);
 
 module.exports = LinkedList;
 
