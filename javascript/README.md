@@ -12,6 +12,7 @@
 - [Linked List Insertion](./linked-list/README-list-insertion.md)
 - [Linked List Kth](./linked-list/README-list-kth.md)
 - [linked-list-zip](./linked-list/README-list-zip.md)
+- [insertSort](./sorts/insertionSort/README.md)
 - [stack-and-queue](./stack-and-queue/README.md)
 - [stack-queue-animal-shelter](./stack-queue/README-SQAS.md)
 - [stack-queue-brackets](./stack-queue/README-SQB.md)

@@ -2,7 +2,6 @@
 
 class Sorts {
   constructor() {
-
   }
 
   insertionSort(arr) {
