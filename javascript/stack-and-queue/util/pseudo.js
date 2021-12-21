@@ -1,7 +1,7 @@
 'use strict';
 
 // Import node class
-const Node = require('./node.js');
+const Node = require('../../stack-queue-pseudo/util/node.js');
 
 class PseudoQueue {
   constructor() {
