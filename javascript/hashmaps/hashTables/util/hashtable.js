@@ -64,8 +64,8 @@ class HashTable {
     }, 0) * 331 % this.size;
   }
 
-  // add method
-  add(key, value) {
+  // set method
+  set(key, value) {
     const hash = this.hash(key);
     if (!this.map[hash]) {
       this.map[hash] = new LinkedList();
@@ -76,26 +76,36 @@ class HashTable {
 
   // get method
   get(key) {
-
+    // hash the key
+    let hash = this.hash(key);
+    // if there is nothing at the hash, return
+    if (!this.map[hash]) return;
+    // hash index.values
+    let value = this.map[hash].values().find(el => key === Object.keys(el)[0]);
+    return value[key];
   }
 
   // contains method
   contains(key) {
-    if (key)
+    if (key) return true;
   }
 
 
 }
 
 let myHashTable = new HashTable(1024);
-myHashTable.add("Eggplant", "10");
-myHashTable.add("SnowPeas", "20");
-myHashTable.add("BellPepper", "25");
-myHashTable.add("Tofu", "15");
-myHashTable.add("BlackBeans", "17");
-myHashTable.add("ChiliSauce", "13");
-myHashTable.add("Broccoli", "31");
+myHashTable.set('Eggplant', '10');
+myHashTable.set('SnowPeas', '20');
+myHashTable.set('BellPepper', '25');
+myHashTable.set('Tofu', '15');
+myHashTable.set('BlackBeans', '17');
+myHashTable.set('ChiliSauce', '13');
+myHashTable.set('Broccoli', '31');
 
+let peas = myHashTable.get('SnowPeas');
 let key = 'noPlaceLikeHome';
+console.log('get method', peas);
 
 console.log((key.charCodeAt(0) + key.charCodeAt(1) + key.charCodeAt(2) + key.charCodeAt(3)) * 331 & 1024);
+
+module.exports = HashTable;
