@@ -47,9 +47,9 @@ class LinkedList {
 }
 
 class HashTable {
-  constructor(size) {
-    this.size = size;
-    this.map = new Array(size);
+  constructor() {
+    this.size = 0;
+    this.map = new Array(1024);
   }
 
   // hash method
@@ -59,41 +59,63 @@ class HashTable {
     // multiply by prime number
     // modulo the size of the hashmap
     // returns index in collection for the key
-    return key.split('').reduce((prev, curr) => {
-      return prev + curr.charCodeAt(0);
-    }, 0) * 331 % this.size;
+    // return key.split('').reduce((prev, curr) => {
+    //   return prev + curr.charCodeAt(0);
+    // }, 0) * 331 % this.size;
+    let hash = 0;
+    for (let i = 0; i < key.length; i++) {
+      hash += key.charCodeAt(i);
+    }
+    return hash % this.map.length;
   }
 
   // set method
+  // from freecodecamp.org
   set(key, value) {
-    const hash = this.hash(key);
-    if (!this.map[hash]) {
-      this.map[hash] = new LinkedList();
-    }
-    let hashEntry = { [key]: value };
-    this.map[hash].append(hashEntry);
+    const index = this.hash(key);
+    this.map[index] = [key, value];
+    this.size++;
   }
 
   // get method
+  //from freecodecamp.org
   get(key) {
-    // hash the key
-    let hash = this.hash(key);
-    // if there is nothing at the hash, return
-    if (!this.map[hash]) return;
-    // hash index.values
-    let value = this.map[hash].values().find(el => key === Object.keys(el)[0]);
-    return value[key];
+    const index = this.hash(key);
+    return this.map[index];
+
+  }
+
+  // remove method
+  // from freecodecamp.org
+  remove(key) {
+    const index = this.hash(key);
+
+    if (this.map[index] && this.map[index].length) {
+      this.map[index] = undefined;
+      this.size++;
+      return true;
+    } else {
+      return false;
+    }
   }
 
   // contains method
   contains(key) {
-    if (key) return true;
+    let hash = this.hash(key);
+    if (this.map[hash]) {
+      return true;
+    } else {
+      return false;
+    }
   }
-
-
 }
 
 let myHashTable = new HashTable(1024);
+
+// let key = 'noPlaceLikeHome';
+
+// myHashTable.display();
+
 myHashTable.set('Eggplant', '10');
 myHashTable.set('SnowPeas', '20');
 myHashTable.set('BellPepper', '25');
@@ -102,10 +124,12 @@ myHashTable.set('BlackBeans', '17');
 myHashTable.set('ChiliSauce', '13');
 myHashTable.set('Broccoli', '31');
 
-let peas = myHashTable.get('SnowPeas');
-let key = 'noPlaceLikeHome';
-console.log('get method', peas);
+console.log(myHashTable.get('Eggplant'));
+console.log(myHashTable.get('SnowPeas'));
+console.log(myHashTable.get('BellPepper'));
 
-console.log((key.charCodeAt(0) + key.charCodeAt(1) + key.charCodeAt(2) + key.charCodeAt(3)) * 331 & 1024);
+console.log(myHashTable);
+
+// console.log((key.charCodeAt(0) + key.charCodeAt(1) + key.charCodeAt(2) + key.charCodeAt(3)) * 331 & 1024);
 
 module.exports = HashTable;
