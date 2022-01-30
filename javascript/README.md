@@ -5,24 +5,37 @@
 ## Table of Contents
 
 - [__tests__](./__tests__)
-- [array-binary-search](./array-binary-search/README.md)
-- [array-insert-shift](./array-insert-shift/README.md)
-- [array-reverse](./array-reverse/README.md)
-- [Linked Lists](./linked-list/README.md)
-- [Linked List Insertion](./linked-list/README-list-insertion.md)
-- [Linked List Kth](./linked-list/README-list-kth.md)
-- [linked-list-zip](./linked-list/README-list-zip.md)
-- [insertSort](./sorts/insertionSort/README.md)
-- [mergeSort](./sorts/mergeSort/README.md)
-- [stack-and-queue](./stack-and-queue/README.md)
-- [stack-queue-animal-shelter](./stack-queue/README-SQAS.md)
-- [stack-queue-brackets](./stack-queue/README-SQB.md)
-- [stack-queue-pseudo](./stack-queueu/README-SQP.md)
-- [binary trees](./binary_tree/README.md)
-- [binary trees breadth first](./binary_tree/README-tree-breadth-first.md)
-- [binary trees tree-max](./binary_tree/README-tree-max.md)
-- [binary trees fizz buzz](./binary_tree/README-tree-fizz-buzz.md)
-- [binary trees odd sum](./binary_tree/README-tree-odd-sum.md)
+- Arrays
+  - [array-binary-search](./arrays/array-binary-search/README.md)
+  - [array-insert-shift](./arrays/array-insert-shift/README.md)
+  - [array-reverse](./arrays/array-reverse/README.md)
+- Binary Trees
+  - [binary trees](./binary_tree/README.md)
+  - [binary trees breadth first](./binary_tree/README-tree-breadth-first.md)
+  - [binary trees tree-max](./binary_tree/README-tree-max.md)
+  - [binary trees fizz buzz](./binary_tree/README-tree-fizz-buzz.md)
+  - [binary trees odd sum](./binary_tree/README-tree-odd-sum.md)
+- Graphs
+  - [graphs](./graphs/README.md)
+- Hashmaps
+  - [hashTables](./hashmaps/hashTables/README.md)
+  - [leftJoin](./hashmaps/leftJoin/README.md)
+  - [repeatedWord](.hashmaps/repeatedWord/README.md)
+  - [treeIntersection](./hashmaps/treeIntersection/README.md)
+- Linked Lists
+  - [Linked Lists](./linked-list/README.md)
+  - [Linked List Insertion](./linked-list/README-list-insertion.md)
+  - [Linked List Kth](./linked-list/README-list-kth.md)
+  - [linked-list-zip](./linked-list/README-list-zip.md)
+- Sorts
+  - [insertSort](./sorts/insertionSort/README.md)
+  - [mergeSort](./sorts/mergeSort/README.md)
+  - [quickSort](./sorts/quickSort/README.md)
+- Stacks and Queues
+  - [stack-and-queue](./stack-and-queue/README.md)
+  - [stack-queue-animal-shelter](./stack-queue/README-SQAS.md)
+  - [stack-queue-brackets](./stack-queue/README-SQB.md)
+  - [stack-queue-pseudo](./stack-queue/README-SQP.md)
 
 ### Folder and Challenge Setup
 
