@@ -9,16 +9,6 @@ class Vertex {
   }
 }
 
-// was trying to use functional components and got lost. Maybe in class we could go over how this would have worked?
-// const Vertex = (props) => {
-//   const [ value ] = useState('');
-//   return (
-//     <div>
-//       <p>Value is: {value}</p>
-//     </div>
-//   );
-// }
-
 class Edge {
   constructor(vertex, weight) {
     this.vertex = vertex;
@@ -28,33 +18,12 @@ class Edge {
   }
 }
 
-// const Edge = (vertex, weight) => {
-//   const [ vertex, weight ] = useState('');
-//   return (
-//     <div>
-//       <p>Vertex is: {vertex}</p>
-//       <p>Weight is: {weight}</p>
-//     </div>
-//   );
-// }
-
 class Graph {
   constructor() {
     // why use a Map?
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
     this.adjacencyList = new Map();
   }
-
-  // const Graph = () => {
-  //   const adjacencyList = useState('');
-  //   return (
-  //     <div className='lists'>
-  //       {adjacencyList.map((list) => (
-  //         <div className='list'>{list}</div>
-  //       ))}
-  //     </div>
-  //   );
-  // };
 
   addVertex(value) {
     // - Arguments: value
