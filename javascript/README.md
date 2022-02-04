@@ -17,7 +17,8 @@
   - [binary trees odd sum](./binary_tree/README-tree-odd-sum.md)
 - Graphs
   - [graphs](./graphs/README.md)
-  - [graphBreadthFirst](./graphs/graphBreadthFirst/util/graphBreadthFirst.js)
+  - [graphBreadthFirst](./graphs/graphBreadthFirst/README.md)
+  - [graphBusinessTrip](./graphs/graphBusinessTrip/README.md)
 - Hashmaps
   - [hashTables](./hashmaps/hashTables/README.md)
   - [leftJoin](./hashmaps/leftJoin/README.md)
