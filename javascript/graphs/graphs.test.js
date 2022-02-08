@@ -1,5 +1,7 @@
 'use strict';
 
+const { it } = require("eslint/lib/rule-tester/rule-tester");
+
 // get graph.js version
 // const Queue = require('../stack-and-queue/util/queue.js');
 
@@ -12,4 +14,5 @@ describe('graph tests', () => {
   it('the proper size is returned, representing the number of nodes in the graph', () => {});
   it('a graph with only one node and edge can be properly returned', () => {});
   it('an empty graph properly returns null', () => {});
+  it('returns a depth first tree', () => {});
 });

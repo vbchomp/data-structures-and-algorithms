@@ -19,6 +19,7 @@
   - [graphs](./graphs/README.md)
   - [graphBreadthFirst](./graphs/graphBreadthFirst/README.md)
   - [graphBusinessTrip](./graphs/graphBusinessTrip/README.md)
+  - [graphDepthFirst](./graphs/graphDepthFirst/README.md)
 - Hashmaps
   - [hashTables](./hashmaps/hashTables/README.md)
   - [leftJoin](./hashmaps/leftJoin/README.md)
