@@ -20,9 +20,14 @@ function repeatedWord(text) {
   return results;
 }
 
-let text1 = 'Once upon a time, there was a brave princess who';
+// used random paragraph generator here https://randomwordgenerator.com/paragraph.php
+let text1 = 'It\'s not his fault. I know you\'re going to want to, but you can\'t blame him. He really has no idea how it happened. I kept trying to come up with excuses I could say to mom that would keep her calm when she found out what happened, but the more I tried, the more I could see none of them would work. He was going to get her wrath and there was nothing I could say to prevent it.';
+let text2 = 'Sitting in the sun, away from everyone who had done him harm in the past, he quietly listened to those who roamed by. He felt at peace in the moment, hoping it would last, but knowing the reprieve would soon come to an end. He closed his eyes, the sun beating down on face and he smiled. He smiled for the first time in as long as he could remember.';
+let text3 = 'This is important to remember. Love isn\'t like pie. You don\'t need to divide it among all your friends and loved ones. No matter how much love you give, you can always give more.';
 
 repeatedWord(text1);
+repeatedWord(text2);
+repeatedWord(text3);
 
 // function topThreeWords(text) {
 //   let regex = '.*[a-zA-Z].*';
